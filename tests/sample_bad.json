@@ -1,0 +1,56 @@
+{
+  "task_tiering": {
+    "done": false,
+    "tiers": [
+      {"name": "给客户发报价单", "frequency_per_week": 8, "tier": "A",
+       "reversible": false, "trust_or_money": true, "decide_30s": true},
+      {"name": "客户情绪安抚", "frequency_per_week": 3, "tier": "B",
+       "reversible": true, "trust_or_money": false, "decide_30s": true},
+      {"name": "付款审批", "frequency_per_week": 2, "tier": "A",
+       "reversible": true, "trust_or_money": false, "decide_30s": true},
+      {"name": "季度汇报演讲", "frequency_per_week": 1, "tier": "C",
+       "reversible": true, "trust_or_money": false, "decide_30s": true}
+    ]
+  },
+  "pilot": {
+    "single_task": false,
+    "task": "所有任务一起上",
+    "four_conditions": {
+      "input_structurable": false,
+      "result_verifiable": false,
+      "error_rollbackable": true,
+      "frequency_ge_3_per_week": true
+    },
+    "weeks_run": 1,
+    "success_rate": 0.55,
+    "minutes_saved_ratio": 0.2
+  },
+  "zero_friction_onboarding": {
+    "trigger_is_existing_action": false,
+    "no_new_entry": false,
+    "onboarding_week_missed_triggers": 9
+  },
+  "trust_ladder": {
+    "current_level": "L3",
+    "level_evidence_weeks": 1,
+    "rollback_tested": false,
+    "human_review_point_set": false,
+    "l3_safety_set": ["延迟发送"],
+    "c_tier_automated": true,
+    "incident_this_period": 2
+  },
+  "asset_sediment": {
+    "template_triad": false,
+    "sop_written": false,
+    "other_person_ran": false,
+    "sop_reuse_count": 0
+  },
+  "risk_threshold": {
+    "money_tasks_exist": true,
+    "cost_per_error_calculated": false,
+    "redline_in_config": false,
+    "redline_value": 0,
+    "redline_recomputed_on_level_up": false,
+    "incentive_aligned": false
+  }
+}

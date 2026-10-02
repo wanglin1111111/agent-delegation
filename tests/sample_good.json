@@ -1,0 +1,60 @@
+{
+  "task_tiering": {
+    "done": true,
+    "tiers": [
+      {"name": "行业日报汇总", "frequency_per_week": 5, "tier": "A",
+       "reversible": true, "trust_or_money": false, "decide_30s": true},
+      {"name": "会议纪要生成", "frequency_per_week": 4, "tier": "A",
+       "reversible": true, "trust_or_money": false, "decide_30s": true},
+      {"name": "客户邮件回复", "frequency_per_week": 15, "tier": "B",
+       "reversible": true, "trust_or_money": false, "decide_30s": true},
+      {"name": "数据核对差异清单", "frequency_per_week": 6, "tier": "B",
+       "reversible": true, "trust_or_money": false, "decide_30s": true},
+      {"name": "客户投诉安抚", "frequency_per_week": 2, "tier": "C",
+       "reversible": false, "trust_or_money": true, "decide_30s": false},
+      {"name": "季度报价与合同条款", "frequency_per_week": 1, "tier": "C",
+       "reversible": false, "trust_or_money": true, "decide_30s": false}
+    ]
+  },
+  "pilot": {
+    "single_task": true,
+    "task": "每日行业简报",
+    "four_conditions": {
+      "input_structurable": true,
+      "result_verifiable": true,
+      "error_rollbackable": true,
+      "frequency_ge_3_per_week": true
+    },
+    "weeks_run": 2,
+    "success_rate": 0.9,
+    "minutes_saved_ratio": 0.6
+  },
+  "zero_friction_onboarding": {
+    "trigger_is_existing_action": true,
+    "no_new_entry": true,
+    "onboarding_week_missed_triggers": 0
+  },
+  "trust_ladder": {
+    "current_level": "L2",
+    "level_evidence_weeks": 4,
+    "rollback_tested": true,
+    "human_review_point_set": true,
+    "l3_safety_set": [],
+    "c_tier_automated": false,
+    "incident_this_period": 0
+  },
+  "asset_sediment": {
+    "template_triad": true,
+    "sop_written": true,
+    "other_person_ran": true,
+    "sop_reuse_count": 2
+  },
+  "risk_threshold": {
+    "money_tasks_exist": true,
+    "cost_per_error_calculated": true,
+    "redline_in_config": true,
+    "redline_value": 10000,
+    "redline_recomputed_on_level_up": true,
+    "incentive_aligned": true
+  }
+}
